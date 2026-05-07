@@ -2,6 +2,7 @@ package daoInplements;
 import dao.iAlunoDAO;
 import model.Aluno;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AlunoDaoImplements implements iAlunoDAO{
@@ -13,7 +14,8 @@ public class AlunoDaoImplements implements iAlunoDAO{
 
     @Override
     public List<Aluno> listarTodosAlunos() {
-        return List.of();
+        List<Aluno> alunos = new ArrayList<>();
+        return alunos;
     }
 
     @Override
