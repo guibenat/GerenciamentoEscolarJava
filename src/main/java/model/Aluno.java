@@ -2,15 +2,15 @@ package model;
 import java.time.LocalDate;
 
 public class Aluno {
-    private int id;
+    private int idAluno;
     private String nome;
     private String email;
     private String cpf;
     private LocalDate data_nascimento;
     private String telefone;
 
-    public Aluno (String nome, String email, String cpf, LocalDate data_nascimento, String telefone){
-        this.id = id;
+    public Aluno (int idAluno, String nome, String email, String cpf, LocalDate data_nascimento, String telefone){
+        this.idAluno = idAluno;
         this.nome = nome;
         this.email = email;
         this.cpf = cpf;
@@ -19,10 +19,10 @@ public class Aluno {
     }
 
     public int getId() {
-        return id;
+        return idAluno;
     }
     public void setId(int id) {
-        this.id = id;
+        this.idAluno = idAluno;
     }
 
     public String getNome() {
@@ -64,7 +64,7 @@ public class Aluno {
     public String toString() {
         return String.format(
                 "Aluno: id=%d - nome=%s - email=%s - cpf=%s - nascimento=%s",
-                id,nome,email,cpf,data_nascimento
+                idAluno,nome,email,cpf,data_nascimento
         );
     }
 }

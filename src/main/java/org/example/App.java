@@ -1,15 +1,66 @@
 package org.example;
-
+import daoInplements.AlunoDaoImplements;
 import database.sqlConn;
 
-/**
- * Hello world!
- *
- */
+import model.Aluno;
+
+import java.util.List;
+import java.util.Scanner;
+
 public class App 
 {
-    public static void main( String[] args )
-    {
+    public static void main(String[] args) {
         sqlConn.testConnection();
+
+        AlunoDaoImplements dao = new AlunoDaoImplements();
+
+        System.out.println(dao.listarTodosAlunos());
+        Scanner sc = new Scanner(System.in);
+
+
+        int opcao;
+
+
+        do {
+            System.out.println("MENU");
+            System.out.println("Cadastrar aluno");
+            System.out.println("Atualizar aluno");
+            System.out.println("Excluir aluno");
+            System.out.println("Listar aluno");
+            System.out.println("Sair do programa");
+
+            opcao = sc.nextInt();
+            sc.nextLine();
+
+            switch (opcao) {
+                case 1:
+                    System.out.println("[1] Cadastrar aluno");
+                    break;
+                case 2:
+                    System.out.println("[2] Atualizar aluno");
+                    break;
+                case 3:
+                    System.out.println("[3] Excluir aluno");
+                    break;
+                case 4:
+                    System.out.println("[4] Listar aluno");
+                    List<Aluno> todosAlunos = dao.listarTodosAlunos();
+                    if (todosAlunos.isEmpty()){
+                        System.out.println("Nenhum aluno encontrado");
+                    } else {
+                        for (Aluno aluno : todosAlunos){
+                            System.out.println(aluno);
+                        }
+                    }
+                    break;
+                case 5:
+                    System.out.println("[5] Cadastro aluno");
+                    break;
+
+            }
+
+        }while (opcao != 0);
+        }
     }
-}
+
+
