@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class AlunoDaoImplements implements iAlunoDAO{
 
@@ -55,8 +56,31 @@ public class AlunoDaoImplements implements iAlunoDAO{
     }
 
     @Override
-    public void listarAlunoId(int id) {
+    public Optional<Aluno> buscarId(int id) {
         String sql = "SELECT * FROM aluno WHERE = ?";
+
+        try (Connection conn = sqlConn.getConnection()){
+            PreparedStatement stat = conn.prepareStatement(sql);
+
+            stat.setInt(1, id);
+            ResultSet rs = stat.executeQuery();
+
+            if (rs.next()){
+                Aluno alunos = new Aluno(
+                        rs.getInt("idAluno"),
+                        rs.getString("nome"),
+                        rs.getString("cpf"),
+                        rs.getString("email"),
+                        rs.getDate("data_nascimento").toLocalDate(),
+                        rs.getString("telefone")
+                );
+                return Optional.of(alunos);
+            }
+
+
+        } catch (SQLException ex) {
+             System.err.println("")
+        }
 
 
 
