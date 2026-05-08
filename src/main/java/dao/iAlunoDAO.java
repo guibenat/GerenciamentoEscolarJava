@@ -12,4 +12,6 @@ public interface iAlunoDAO{
     void atualizarAluno (Aluno aluno);
 
     void excluirAluno(int Id);
+
+    void listarAlunoId(int id);
 }

@@ -50,7 +50,15 @@ public class AlunoDaoImplements implements iAlunoDAO{
     }
 
     @Override
-    public void excluirAluno(int Id) {
+    public void excluirAluno(int id) {
+
+    }
+
+    @Override
+    public void listarAlunoId(int id) {
+        String sql = "SELECT * FROM aluno WHERE = ?";
+
+
 
     }
 }

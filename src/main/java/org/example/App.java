@@ -23,11 +23,11 @@ public class App
 
         do {
             System.out.println("MENU");
-            System.out.println("Cadastrar aluno");
-            System.out.println("Atualizar aluno");
-            System.out.println("Excluir aluno");
-            System.out.println("Listar aluno");
-            System.out.println("Sair do programa");
+            System.out.println("[1] Cadastrar aluno");
+            System.out.println("[2] Atualizar aluno");
+            System.out.println("[3] Excluir aluno");
+            System.out.println("[4] Listar aluno");
+            System.out.println("[5] Sair do programa");
 
             opcao = sc.nextInt();
             sc.nextLine();
@@ -48,18 +48,16 @@ public class App
                     if (todosAlunos.isEmpty()){
                         System.out.println("Nenhum aluno encontrado");
                     } else {
-                        for (Aluno aluno : todosAlunos){
-                            System.out.println(aluno);
-                        }
-                    }
+                            for (Aluno aluno : todosAlunos){
+                                System.out.println(aluno);
+                            }
+                     }
                     break;
                 case 5:
                     System.out.println("[5] Cadastro aluno");
                     break;
-
             }
-
-        }while (opcao != 0);
+        } while (opcao != 0);
         }
     }
 
