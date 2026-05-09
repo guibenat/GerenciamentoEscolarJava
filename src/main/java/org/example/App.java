@@ -50,6 +50,7 @@ public class App
                     } else {
                             for (Aluno aluno : todosAlunos){
                                 System.out.println(aluno);
+
                             }
                      }
                     break;
