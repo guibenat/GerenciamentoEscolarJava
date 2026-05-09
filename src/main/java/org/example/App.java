@@ -38,6 +38,7 @@ public class App
                     break;
                 case 2:
                     System.out.println("[2] Atualizar aluno");
+
                     break;
                 case 3:
                     System.out.println("[3] Excluir aluno");

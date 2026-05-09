@@ -13,7 +13,7 @@ public class AlunoDaoImplements implements iAlunoDAO{
 
     @Override
     public void salvar(Aluno aluno) {
-        String sql = "INSERT INTO alunos = (nome, cpf, email, data_nascimento, telefone) VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO Aluno = (nome, cpf, email, data_nascimento, telefone) VALUES (?, ?, ?, ?, ?, ?)";
 
         try(Connection conn = sqlConn.getConnection()) {
             PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
@@ -35,7 +35,7 @@ public class AlunoDaoImplements implements iAlunoDAO{
 
     @Override
     public List<Aluno> listarTodosAlunos() {
-        String sql = "SELECT * FROM aluno ORDER BY nome ASC";
+        String sql = "SELECT * FROM Aluno ORDER BY nome ASC";
         List<Aluno> alunos = new ArrayList<>();
 
         try (Connection conn = sqlConn.getConnection()){
@@ -54,15 +54,12 @@ public class AlunoDaoImplements implements iAlunoDAO{
         } catch (SQLException e){
             System.err.println("Conexão mal sucedida." + e.getMessage());
         }
-
-
-
         return alunos;
     }
 
     @Override
     public void atualizarAluno(Aluno aluno) {
-        String sql =  "UPDATE aluno SET nome = ?, cpf = ?, email = ?, data_nascimento = ?, telefone = ? WHERE id = ?";
+        String sql =  "UPDATE Aluno SET nome = ?, cpf = ?, email = ?, data_nascimento = ?, telefone = ? WHERE id = ?";
 
         try (Connection conn = sqlConn.getConnection()){
             PreparedStatement stmt = conn.prepareStatement(sql);
@@ -93,7 +90,7 @@ public class AlunoDaoImplements implements iAlunoDAO{
 
     @Override
     public Optional<Aluno> buscarId(int id) {
-        String sql = "SELECT * FROM aluno WHERE = ?";
+        String sql = "SELECT * FROM Aluno WHERE = ?";
 
         try (Connection conn = sqlConn.getConnection()){
             PreparedStatement stat = conn.prepareStatement(sql);
