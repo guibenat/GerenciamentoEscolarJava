@@ -85,6 +85,22 @@ public class AlunoDaoImplements implements iAlunoDAO{
 
     @Override
     public void excluirAluno(int id) {
+        String sql = "DELETE FROM Aluno WHERE id = ?";
+
+        try (Connection conn = sqlConn.getConnection()){
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setInt(1, id);
+
+            int linhas = stmt.executeUpdate();
+
+            if (linhas > 0) {
+                System.out.println("Aluno excluído com sucesso");
+            } else {
+                System.out.println("Aluno não encontrado");
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
 
     }
 
