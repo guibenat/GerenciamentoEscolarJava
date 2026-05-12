@@ -17,10 +17,6 @@ public class sqlConn {
             System.out.println("Conexão foi bem estabelecida" + connection);
         } catch (SQLException e) {
             System.out.println("Falha na conexão" + e.getMessage());
-            System.out.println("");
-            System.out.println("");
-            System.out.println("");
-            System.out.println("");
         }
     }
 

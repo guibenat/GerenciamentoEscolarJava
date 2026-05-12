@@ -4,6 +4,8 @@ import daoInplements.AlunoDaoImplements;
 import database.sqlConn;
 import model.Aluno;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -30,14 +32,25 @@ public class App {
 
             switch (opcao) {
                 case 1:
-                    System.out.println("\n>> Cadastrar Novo Aluno");
+                    System.out.println("\n Cadastrar Novo Aluno");
                     System.out.print("Nome: ");
                     String nome = sc.nextLine();
                     System.out.print("Email: ");
                     String email = sc.nextLine();
+                    System.out.println("Cpf: ");
+                    String cpf = sc.nextLine();
+                    System.out.println("Data de nascimento");
+                    LocalDate data_nascimento = null;
+                    try{
+                        data_nascimento = LocalDate.parse(sc.nextLine());
+                    } catch (DateTimeParseException e){
+                        System.out.println(e.getMessage());
+                    }
+                    System.out.println("Insita seu telefone");
+                    String telefone = sc.nextLine();
 
-                    Aluno novoAluno = new Aluno(nome, email);
-                    dao.salvar(novoAluno); // Supondo que seu método de inserir se chame salvar
+                    Aluno novoAluno = new Aluno(nome,email, cpf, data_nascimento, telefone);
+                    dao.salvar(novoAluno);
                     System.out.println("Aluno cadastrado com sucesso!");
                     break;
 

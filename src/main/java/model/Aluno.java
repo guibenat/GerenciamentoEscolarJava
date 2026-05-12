@@ -17,6 +17,17 @@ public class Aluno {
         this.data_nascimento = data_nascimento;
         this.telefone = telefone;
     }
+    public Aluno (String nome, String email, String cpf, LocalDate data_nascimento, String telefone){
+        this.nome = nome;
+        this.email = email;
+        this.cpf = cpf;
+        this.data_nascimento = data_nascimento;
+        this.telefone = telefone;
+    }
+
+    public Aluno(int idAtualizar, String novoNome, String novoEmail) {
+    }
+
 
     public int getId() {
         return idAluno;

@@ -13,7 +13,7 @@ public class AlunoDaoImplements implements iAlunoDAO{
 
     @Override
     public void salvar(Aluno aluno) {
-        String sql = "INSERT INTO Aluno = (nome, cpf, email, data_nascimento, telefone) VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO Aluno(nome, cpf, email, data_nascimento, telefone) VALUES (?, ?, ?, ?, ?)";
 
         try(Connection conn = sqlConn.getConnection()) {
             PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
@@ -25,10 +25,17 @@ public class AlunoDaoImplements implements iAlunoDAO{
             stmt.setString(5,aluno.getTelefone());
 
             ResultSet chaves = stmt.getGeneratedKeys();
+
             if (chaves.next()) {
                 aluno.setId(chaves.getInt(1));
             }
-        } catch (SQLException e) {
+
+            stmt.executeUpdate();
+
+            System.out.println("Aluno cadastrado com sucesso");
+        }
+
+        catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
