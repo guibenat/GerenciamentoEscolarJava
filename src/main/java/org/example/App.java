@@ -19,7 +19,7 @@ public class App {
         int opcao;
 
         do {
-            System.out.println("\n--- MENU DE GERENCIAMENTO ---");
+            System.out.println("\nMENU DE GERENCIAMENTO");
             System.out.println("[1] Cadastrar aluno");
             System.out.println("[2] Atualizar aluno");
             System.out.println("[3] Excluir aluno");
@@ -55,7 +55,7 @@ public class App {
                     break;
 
                 case 2:
-                    System.out.println("\n>> Atualizar Aluno");
+                    System.out.println("\n Atualizar Aluno");
                     System.out.print("Digite o ID do aluno que deseja atualizar: ");
                     int idAtualizar = sc.nextInt();
                     sc.nextLine();
@@ -71,7 +71,7 @@ public class App {
                     break;
 
                 case 3:
-                    System.out.println("\n>> Excluir Aluno");
+                    System.out.println("\n Excluir Aluno");
                     System.out.print("Digite o ID do aluno para excluir: ");
                     int idExcluir = sc.nextInt();
 
@@ -80,7 +80,7 @@ public class App {
                     break;
 
                 case 4:
-                    System.out.println("\n>> Lista de Alunos:");
+                    System.out.println("\n Lista de Alunos:");
                     List<Aluno> todosAlunos = dao.listarTodosAlunos();
                     if (todosAlunos.isEmpty()) {
                         System.out.println("Nenhum aluno encontrado no banco de dados.");
@@ -92,7 +92,7 @@ public class App {
                     break;
 
                 case 0:
-                    System.out.println("Encerrando o sistema...");
+                    System.out.println("Encerrando o sistema");
                     break;
 
                 default:

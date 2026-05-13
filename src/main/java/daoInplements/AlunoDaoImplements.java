@@ -92,7 +92,7 @@ public class AlunoDaoImplements implements iAlunoDAO{
 
     @Override
     public void excluirAluno(int id) {
-        String sql = "DELETE FROM Aluno WHERE id = ?";
+        String sql = "DELETE FROM Aluno WHERE idAluno    = ?";
 
         try (Connection conn = sqlConn.getConnection()){
             PreparedStatement stmt = conn.prepareStatement(sql);
