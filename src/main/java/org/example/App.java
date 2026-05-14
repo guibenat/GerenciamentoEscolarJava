@@ -91,6 +91,14 @@ public class App {
                     }
                     break;
 
+                case 5:
+                    System.out.println("\n Buscar por id:");
+                    break;
+
+                case 6:
+                    System.out.println("\n Listar turmas:");
+                    break;
+
                 case 0:
                     System.out.println("Encerrando o sistema");
                     break;
