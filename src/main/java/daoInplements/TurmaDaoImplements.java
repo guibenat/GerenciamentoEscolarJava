@@ -1,4 +1,4 @@
-package daoImplements;
+package daoInplements;
 
 import dao.iTurmaDAO;
 import database.sqlConn;
@@ -12,7 +12,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TurmaDAOImplements implements iTurmaDAO {
+public class TurmaDaoImplements implements iTurmaDAO {
     @Override
     public List<Turma> listarTodasTurmas() {
         String sql = "SELECT * FROM turma ORDER BY turno DESC, nome ASC";
